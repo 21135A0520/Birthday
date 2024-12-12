@@ -183,7 +183,6 @@
                     <div class="text">Unforgettable memories.</div>
                 </div>
             </div>
-            <!-- Add more slides as needed -->
         </div>
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
@@ -203,14 +202,13 @@
                 disableOnInteraction: false,
             },
         });
-        // Pause scrolling on hover
 const memoryImages = document.querySelectorAll('.memory');
 memoryImages.forEach(image => {
     image.addEventListener('mouseenter', () => {
-        swiper.autoplay.stop(); // Stop autoplay on hover
+        swiper.autoplay.stop();
     });
     image.addEventListener('mouseleave', () => {
-        swiper.autoplay.start(); // Resume autoplay when hover ends
+        swiper.autoplay.start();
     });
 });
     </script>
