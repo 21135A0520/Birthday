@@ -19,43 +19,34 @@
         }
 
         .flip-scale-up-hor {
-            -webkit-animation: flip-scale-up-dia 0.5s linear both;
-            animation: flip-scale-up-dia 0.5s linear both;
+            -webkit-animation: scale-in-ver-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: scale-in-ver-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
         }
 
-        @-webkit-keyframes flip-scale-up-dia {
+        @-webkit-keyframes scale-in-ver-center {
             0% {
-                -webkit-transform: scale(1) rotate3d(1, 1, 0, 0deg);
-                transform: scale(1) rotate3d(1, 1, 0, 0deg);
+              -webkit-transform: scaleY(0);
+                      transform: scaleY(0);
+              opacity: 1;
             }
-
-            50% {
-                -webkit-transform: scale(2) rotate3d(1, 1, 0, 90deg);
-                transform: scale(2) rotate3d(1, 1, 0, 90deg);
-            }
-
             100% {
-                -webkit-transform: scale(1) rotate3d(1, 1, 0, 0deg);
-                transform: scale(1) rotate3d(1, 1, 0, 0deg);
+              -webkit-transform: scaleY(1);
+                      transform: scaleY(1);
+              opacity: 1;
             }
-        }
-
-        @keyframes flip-scale-up-dia {
+          }
+          @keyframes scale-in-ver-center {
             0% {
-                -webkit-transform: scale(1) rotate3d(1, 1, 0, 0deg);
-                transform: scale(1) rotate3d(1, 1, 0, 0deg);
+              -webkit-transform: scaleY(0);
+                      transform: scaleY(0);
+              opacity: 1;
             }
-
-            50% {
-                -webkit-transform: scale(2) rotate3d(1, 1, 0, 90deg);
-                transform: scale(2) rotate3d(1, 1, 0, 90deg);
-            }
-
             100% {
-                -webkit-transform: scale(1) rotate3d(1, 1, 0, 0deg);
-                transform: scale(1) rotate3d(1, 1, 0, 0deg);
+              -webkit-transform: scaleY(1);
+                      transform: scaleY(1);
+              opacity: 1;
             }
-        }
+          }
 
         .swiper {
 
@@ -89,7 +80,7 @@
         .memory img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: fill;
             transition: transform 0.3s ease;
         }
 
@@ -122,6 +113,9 @@
             display: none;
         }
 
+        .rotate{
+            transform: rotate(270deg);
+        }
         @media (max-width: 768px) {
             .swiper {
                 height: 50vh;
@@ -150,16 +144,167 @@
         <div class="swiper-wrapper">
             <div class="swiper-slide flip-scale-up-hor">
                 <div class="memory">
-                    <img src="./Images/1.jpg" alt="First memory of our TRIO">
-                    <div class="text">First pic of our TRIO.</div>
+                    <img src="./Images/trio/start.jpg" alt="First memory of our TRIO">
+                    <div class="text">Where our TRIO journey starts..First pic of our TRIO.</div>
                 </div>
             </div>
             <div class="swiper-slide flip-scale-up-hor">
                 <div class="memory">
-                    <img src="./Images/2.jpg" alt="Cherished moments together">
-                    <div class="text">Cherished moments together.</div>
+                    <img src="./Images/trio/b.jpg" alt="Cherished moments together">
+                    <div class="text">Our classroom talks....never ending talks..</div>
                 </div>
             </div>
+            <div class="swiper-slide flip-scale-up-hor">
+                <div class="memory">
+                    <img src="./Images/trio/c.jpg" alt="Cherished moments together">
+                    <div class="text">Andhariki anukokunda...manam anukoni red vesukunnam ...</div>
+                </div>
+            </div>
+            <div class="swiper-slide flip-scale-up-hor">
+                <div class="memory">
+                    <img src="./Images/trio/d.jpg" alt="First memory of our TRIO">
+                    <div class="text">Dwarakamai Kaburulu...</div>
+                </div>
+            </div>
+            <div class="swiper-slide flip-scale-up-hor">
+                <div class="memory">
+                    <img src="./Images/trio/e.jpg" alt="First memory of our TRIO">
+                    <div class="text">Oka pic kosam ..entha kasta padamo..andharu vachesthunaru ani adavidi gaa tesukunna pic... </div>
+                </div>
+            </div>
+            <div class="swiper-slide flip-scale-up-hor">
+                <div class="memory">
+                    <img src="./Images/trio/f.jpg" alt="First memory of our TRIO">
+                    <div class="text">Waste fellow chandu...naa kosam em alochinchakunda pandi laa gattiga kottesav ..naa hand anthe green ayipoyindhi vachii..</div>
+                </div>
+            </div>
+            <div class="swiper-slide flip-scale-up-hor">
+                <div class="memory">
+                    <img src="./Images/trio/g.jpg" alt="First memory of our TRIO">
+                    <div class="text">Caring vundali gani...mari pakkana vallu edusthunna pattinchukokunda mondi gaa vundakudadhu..nee valla beach plan waste aa roju...</div>
+                </div>
+            </div>
+            <div class="swiper-slide flip-scale-up-hor">
+                <div class="memory">
+                    <img src="./Images/trio/h.jpg" class="rotate" alt="First memory of our TRIO">
+                    <div class="text">Manaki baga alavatu ayina place..dwarakamai</div>
+                </div>
+            </div>
+            <div class="swiper-slide flip-scale-up-hor">
+                <div class="memory">
+                    <img src="./Images/trio/i.jpg" alt="First memory of our TRIO">
+                    <div class="text">ID cards vachina roju ..</div>
+                </div>
+            </div>
+            <div class="swiper-slide flip-scale-up-hor">
+                <div class="memory">
+                    <img src="./Images/trio/j.jpg" alt="First memory of our TRIO">
+                    <div class="text">DAA exam ..naku baledhu ani early gaa vachesaru..nuv kiran..</div>
+                </div>
+            </div>
+            <div class="swiper-slide flip-scale-up-hor">
+                <div class="memory">
+                    <img src="./Images/trio/k.jpg" alt="First memory of our TRIO">
+                    <div class="text">Miru edharu matladukovatam ledho ..endhuko ento mari ..mee edhari madya nene kadha vundedhi epudu ..thappadhu kadha naku ..</div>
+                </div>
+            </div>
+            <div class="swiper-slide flip-scale-up-hor">
+                <div class="memory">
+                    <img src="./Images/trio/l.jpg" alt="First memory of our TRIO">
+                    <div class="text">My first birthday with u --epudo nuvve gurthu teychukooo...</div>
+                </div>
+            </div>
+            <div class="swiper-slide flip-scale-up-hor">
+                <div class="memory">
+                    <img src="./Images/trio/m.jpg" alt="First memory of our TRIO">
+                    <div class="text">Asthalakshmi Temple...</div>
+                </div>
+            </div>
+            <div class="swiper-slide flip-scale-up-hor">
+                <div class="memory">
+                    <img src="./Images/trio/n.jpg" alt="First memory of our TRIO">
+                    <div class="text">Kiran Birthday Day ...park baga enjoy chesam ...</div>
+                </div>
+            </div>
+            <div class="swiper-slide flip-scale-up-hor">
+                <div class="memory">
+                    <img src="./Images/trio/o.jpg" alt="First memory of our TRIO">
+                    <div class="text">Kusuma birthday Aug-20 ...park loo bagane padukone vunnav andharu ninnu moosukoni vellaru...kiran niku thana chunni vesi cute gaa pic tesukundi...</div>
+                </div>
+            </div>
+            <div class="swiper-slide flip-scale-up-hor">
+                <div class="memory">
+                    <img src="./Images/trio/p.jpg" alt="First memory of our TRIO">
+                    <div class="text">Naa birthday ..tq so much for coming college on that day..naa kosam thirigav kabati excuse chesa birthday date marchipoyina..</div>
+                </div>
+            </div>
+            <div class="swiper-slide flip-scale-up-hor">
+                <div class="memory">
+                    <img src="./Images/trio/q.jpg" alt="First memory of our TRIO">
+                    <div class="text">Actually ..we tried our best to make u feel happy ..unfortunately something has happen...ok ok...</div>
+                </div>
+            </div>
+            <div class="swiper-slide flip-scale-up-hor">
+                <div class="memory">
+                    <img src="./Images/trio/r.jpg" alt="First memory of our TRIO">
+                    <div class="text">Dec 24th -2023....</div>
+                </div>
+            </div>
+            <div class="swiper-slide flip-scale-up-hor">
+                <div class="memory">
+                    <img src="./Images/trio/s.jpg" alt="First memory of our TRIO">
+                    <div class="text">Exam preparations...</div>
+                </div>
+            </div>
+            <div class="swiper-slide flip-scale-up-hor">
+                <div class="memory">
+                    <img src="./Images/trio/t.jpg" alt="First memory of our TRIO">
+                    <div class="text">Unexpected day..without your permission ..u came to kiran's house </div>
+                </div>
+            </div>
+            <div class="swiper-slide flip-scale-up-hor">
+                <div class="memory">
+                    <img src="./Images/trio/u.jpg" alt="First memory of our TRIO">
+                    <div class="text">Kalasigiri ...epudu endhuko miru godava padatharo mike teyliyali..</div>
+                </div>
+            </div>
+            <div class="swiper-slide flip-scale-up-hor">
+                <div class="memory">
+                    <img src="./Images/trio/v.jpg" alt="First memory of our TRIO">
+                    <div class="text">Padukondi grp..melukoni okasari ayina bayati vellam..nattinchesaru nuv ravadam ledhu ani ...but vachav lee naa kosam...</div>
+                </div>
+            </div>
+            <div class="swiper-slide flip-scale-up-hor">
+                <div class="memory">
+                    <img src="./Images/trio/w.jpg" alt="First memory of our TRIO">
+                    <div class="text">Exam Day...adhi kuda naku teyliyadhu kiran cheppindhi..</div>
+                </div>
+            </div>
+            <div class="swiper-slide flip-scale-up-hor">
+                <div class="memory">
+                    <img src="./Images/trio/x.jpg" alt="First memory of our TRIO">
+                    <div class="text">First tym kiran valla intiki vellam...mothaniki niku oka chance echaru propose cheyinchukoo ani...</div>
+                </div>
+            </div>
+            <div class="swiper-slide flip-scale-up-hor">
+                <div class="memory">
+                    <img src="./Images/trio/y.jpg" alt="First memory of our TRIO">
+                    <div class="text">Nannu drop chesav..TCS 2nd exam..</div>
+                </div>
+            </div>
+            <div class="swiper-slide flip-scale-up-hor">
+                <div class="memory">
+                    <img src="./Images/trio/z.jpg" alt="First memory of our TRIO">
+                    <div class="text">Last pic or our TRIO.</div>
+                </div>
+            </div>
+            <div class="swiper-slide flip-scale-up-hor">
+                <div class="memory">
+                    <img src="./Images/trio/end.jpg" alt="First memory of our TRIO">
+                    <div class="text">I want trio be like this ..how such pure bond between us...</div>
+                </div>
+            </div>
+
         </div>
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
@@ -168,14 +313,14 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script>
         const swiper = new Swiper('.swiper', {
-            direction: 'vertical',
+            direction: 'horizontal',
             loop: true,
             navigation: {
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
             },
             autoplay: {
-                delay: 3000,
+                delay: 1000,
                 disableOnInteraction: false,
             },
         });
