@@ -8,21 +8,57 @@
     <link rel="icon" href="./Images/Favicon.jpg" type="image/x-icon">
     <title>Happy Birthday Chandu ❤️</title>
     <style>
-        .wishes {
-            text-align: center;
-            animation: fadeIn 3s ease;
-      /*      background-image: url("Images/b4.jpg");*/
-            background-repeat: no-repeat;
+        /* General Styles */
+        body {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("Images/b4.jpg");
             background-size: cover;
             background-position: center;
             height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            color: white;
+            font-family: 'Arial', sans-serif;
         }
 
+        /* Particle Animation */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            animation: float 6s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh);
+                opacity: 0;
+            }
+        }
+
+        /* Dynamic Text Animation */
         .wishes h1 {
             font-size: 4rem;
             text-transform: uppercase;
             letter-spacing: 2px;
-            animation: textPulse 2s infinite ease-in-out;
+            animation: textPulse 2s infinite ease-in-out, text-reveal 3s infinite ease-in-out;
         }
 
         .wishes span {
@@ -30,19 +66,25 @@
             display: inline-block;
             animation: bounce 1.5s infinite ease-in-out;
         }
-        .turn{
-            animation: turning 1.5s ease-in-out;
+        .img-main:hover {
+            box-shadow: 0px 0px 30px #f39c12;
         }
-        @keyframes fadeIn {
+
+
+        @keyframes text-reveal {
             0% {
                 opacity: 0;
+                transform: scale(0.9);
             }
-
-            100% {
+            50% {
                 opacity: 1;
+                transform: scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(1.1);
             }
         }
-
         @keyframes textPulse {
 
             0%,
@@ -70,42 +112,106 @@
                 transform: translateY(-10px);
             }
         }
-        @keyframes turning {
-            0%{
-                transform: rotate(0deg);
+
+        /* Music Button */
+        .music-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #ff7675;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
             }
-            50%{
-                transform:rotate(180deg)
+            50% {
+                transform: scale(1.1);
             }
-            100%{
-                transform: rotate(360deg);
+            100% {
+                transform: scale(1);
             }
+        }
+
+        /* Ripple Button Animation */
+        .btn {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 200%;
+            height: 200%;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            transition: transform 0.5s;
+        }
+
+        .btn:hover::after {
+            transform: translate(-50%, -50%) scale(1);
         }
     </style>
 </head>
 
 <body>
-    <nav
-        class="navbar shadow navbar-expand-lg d-flex justify-content-between align-items-center px-4 py-3 bg-primary-subtle">
+    <nav class="navbar shadow navbar-expand-lg d-flex justify-content-between align-items-center px-4 py-3">
         <div class="logo">
-            <a href="#" class="navbar-brand text-danger fs-2">TRIO.</a>
+            <a href="#" class="navbar-brand text-danger fs-2">Hero.</a>
         </div>
         <div class="d-flex navbar-expand-sm">
-            <a href="Message.html"
-                class="nav-link text-danger fs-5 me-3 p-2 border border-light bg-light rounded">Messages</a>
-            <!-- <a href="Memories.html"
-                class="nav-link text-danger fs-5 p-2 border border-light bg-light rounded">Memories</a> -->
+            <a href="#messageModal" data-bs-toggle="modal" class="nav-link text-light fs-5 me-3 p-2 border rounded">Messages</a>
         </div>
     </nav>
-    <div class="wishes d-flex justify-content-start align-items-center flex-column">
-        <h1 class="mt-5">HBD Mr. CHandu<span>❤️</span></h1>
-        <div class="img-main mt-4"><img src="./Images/Grp/start.jpg" alt="" width="400" height="400" class="rounded-5 border turn"></div>
+    <div class="wishes d-flex flex-column justify-content-center align-items-center text-center">
+        <h1 class="mt-5 text-light">HBD Mr.Chandu<span>❤️</span></h1>
+        <div class="img-main mt-4 rounded-5">
+            <img src="./Images/Grp/start.jpg" alt="Birthday Image" width="400" height="400" class="rounded-5">
+        </div>
         <div class="mt-4">
-            <a href="Amrutanjans.html" class="btn btn-primary p-3 fs-5 m-4">Amruthanjans Memories</a>
-            <a href="Jaffids.html" class="btn btn-danger p-3 fs-5 m-4">Jaffids Memories</a>
-            <a href="Memories.html" class="btn btn-primary p-3 fs-5 m-4">Trio Memories</a>
+            <a href="./Amrutanjans.html" data-bs-toggle="modal" class="btn btn-success p-3 fs-5 m-2 rounded-pill">Amruthanjans Memories</a>
+            <a href="./Jaffids.html" data-bs-toggle="modal" class="btn btn-danger p-3 fs-5 m-2 rounded-pill">Jaffids Memories</a>
+            <a href="./Memories.html" data-bs-toggle="modal" class="btn btn-primary p-3 fs-5 m-2 rounded-pill">Trio Memories</a>
         </div>
     </div>
-    
+
+    <!-- Music Button -->
+    <button class="music-btn" onclick="playMusic()">🎵</button>
+
+    <!-- Particles -->
+    <div class="particles"></div>
+
+
+    <script>
+        // Particle Generation
+        const particles = document.querySelector('.particles');
+        for (let i = 0; i < 100; i++) {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+            particle.style.left = `${Math.random() * 100}%`;
+            particle.style.animationDuration = `${Math.random() * 3 + 3}s`;
+            particle.style.animationDelay = `${Math.random() * 3}s`;
+            particles.appendChild(particle);
+        }
+
+        // Music Playback
+        function playMusic() {
+            const audio = new Audio('./path/to/birthday-song.mp3');
+            audio.play();
+        }
+    </script>
 </body>
+
 </html>
