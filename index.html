@@ -11,6 +11,11 @@
         .wishes {
             text-align: center;
             animation: fadeIn 3s ease;
+      /*      background-image: url("Images/b4.jpg");*/
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
         }
 
         .wishes h1 {
@@ -25,7 +30,9 @@
             display: inline-block;
             animation: bounce 1.5s infinite ease-in-out;
         }
-
+        .turn{
+            animation: turning 1.5s ease-in-out;
+        }
         @keyframes fadeIn {
             0% {
                 opacity: 0;
@@ -63,6 +70,17 @@
                 transform: translateY(-10px);
             }
         }
+        @keyframes turning {
+            0%{
+                transform: rotate(0deg);
+            }
+            50%{
+                transform:rotate(180deg)
+            }
+            100%{
+                transform: rotate(360deg);
+            }
+        }
     </style>
 </head>
 
@@ -79,12 +97,15 @@
                 class="nav-link text-danger fs-5 p-2 border border-light bg-light rounded">Memories</a>
         </div>
     </nav>
-    <div class="wishes">
-        <h1>
-            Happy Birthday Mr. Attitude
-            <span>❤️</span>
-        </h1>
+    <div class="wishes d-flex justify-content-start align-items-center flex-column">
+        <h1 class="mt-5">HBD Mr. CHandu<span>❤️</span></h1>
+        <div class="img-main mt-4"><img src="./Images/Grp/start.jpg" alt="" width="400" height="400" class="rounded-5 border turn"></div>
+        <div class="mt-4">
+            <a href="Amrutanjans.html" class="btn btn-primary p-3 fs-5">Amruthanjans Memories</a>
+            <a href="Jaffids.html" class="btn btn-danger p-3 fs-5">Jaffids Memories</a>
+            <a href="Memories.html" class="btn btn-primary p-3 fs-5">Trio Memories</a>
+        </div>
     </div>
+    
 </body>
-
 </html>
