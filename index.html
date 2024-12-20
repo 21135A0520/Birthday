@@ -8,7 +8,6 @@
     <link rel="icon" href="./Images/Favicon.jpg" type="image/x-icon">
     <title>Happy Birthday Chandu ❤️</title>
     <style>
-        /* General Styles */
         body {
             background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("Images/b4.jpg");
             background-size: cover;
@@ -21,7 +20,6 @@
             height:100vh;
         }
 
-        /* Particle Animation */
         .particles {
             position: absolute;
             top: 0;
@@ -54,7 +52,6 @@
             }
         }
 
-        /* Dynamic Text Animation */
         .wishes h1 {
             font-size: 4rem;
             text-transform: uppercase;
@@ -68,8 +65,8 @@
             animation: bounce 1.5s infinite ease-in-out;
         }
         .img-main{
-            width:300px;
-            height:300px;
+            width:400px;
+            height:400px;
         }
         .img-main img{
             width:100%;
@@ -117,7 +114,6 @@
             }
         }
 
-        /* Music Button */
         .music-btn {
             position: fixed;
             bottom: 20px;
@@ -145,7 +141,6 @@
             }
         }
 
-        /* Ripple Button Animation */
         .btn {
             position: relative;
             overflow: hidden;
@@ -188,10 +183,31 @@
             }
 
             .music-btn {
-                width: 50px;
-                height: 50px;
-                font-size: 1.25rem;
-            }
+                background-color: #007BFF;
+                color: white;
+                border: none;
+                padding: 12px;
+                font-size: 24px;
+                border-radius: 50%;
+                cursor: pointer;
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                width: 60px;
+                height: 60px;
+                box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+                transition: background-color 0.3s ease, transform 0.2s ease;
+              }
+            
+              .music-btn:hover {
+                background-color: #0056b3;
+                transform: translateY(-2px);
+              }
+            
+              .music-btn:active {
+                background-color: #004085;
+                transform: translateY(0);
+              }
         }
     </style>
 </head>
@@ -211,20 +227,19 @@
             <img src="./Images/Grp/start.jpg" alt="Birthday Image" class="rounded-5">
         </div>
         <div class="mt-2 buttons align-center text-center">
-            <a href="./Amrutanjans.html" class="btn btn-success p-2 fs-5 rounded-pill">Amruthanjans Memories</a>
+            <a href="./Amrutanjans.html" class="btn btn-danger p-2 fs-5 rounded-pill">Amruthanjans Memories</a>
             <a href="./Jaffids.html" class="btn btn-danger p-2 fs-5 m-1 rounded-pill">Jaffids Memories</a>
-            <a href="./Memories.html" class="btn btn-primary p-2 fs-5 m-1 rounded-pill">Trio Memories</a>
+            <a href="./Memories.html" class="btn btn-danger p-2 fs-5 m-1 rounded-pill">Trio Memories</a>
         </div>
     </div>
+    <button id="music-btn" class="music-btn">
+        <span id="icon" class="play-icon">🎵</span>
+      </button>
+      <audio id="music-player" src="./Images/song.mp3"></audio>
 
-    <!-- Music Button -->
-    <button class="music-btn" onclick="playMusic()">🎵</button>
-
-    <!-- Particles -->
     <div class="particles"></div>
 
     <script>
-        // Particle Generation
         const particles = document.querySelector('.particles');
         for (let i = 0; i < 100; i++) {
             const particle = document.createElement('div');
@@ -234,12 +249,19 @@
             particle.style.animationDelay = `${Math.random() * 3}s`;
             particles.appendChild(particle);
         }
+        const musicPlayer = document.getElementById('music-player');
+  const musicButton = document.getElementById('music-btn');
+  const icon = document.getElementById('icon');
 
-        // Music Playback
-        function playMusic() {
-            const audio = new Audio('./path/to/birthday-song.mp3');
-            audio.play();
-        }
+  musicButton.addEventListener('click', () => {
+    if (musicPlayer.paused) {
+      musicPlayer.play();
+      icon.textContent = '⏸';
+    } else {
+      musicPlayer.pause();
+      icon.textContent = '🎵'; 
+    }
+  });
     </script>
 </body>
 
