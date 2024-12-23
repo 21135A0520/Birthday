@@ -116,6 +116,39 @@
         .rotate{
             transform: rotate(270deg);
         }
+        .music-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #ff7675;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .btn {
+            position: relative;
+            overflow: hidden;
+        }
         @media (max-width: 768px) {
             .swiper {
                 height: 50vh;
@@ -286,12 +319,6 @@
             </div>
             <div class="swiper-slide flip-scale-up-hor">
                 <div class="memory">
-                    <img src="./Images/Grp/26.jpg" alt="First memory of our TRIO">
-                    <div class="text">Mothaniki saradhaga adukoni padukoni..vedukollu cheppam kiran valla intiki</div>
-                </div>
-            </div>
-            <div class="swiper-slide flip-scale-up-hor">
-                <div class="memory">
                     <img src="./Images/Grp/27.jpg" alt="First memory of our TRIO">
                     <div class="text">Chandu, this is our last Amruthanjan's pic. In this journey, we learned so much, faced struggles, had endless fun together, and created countless memories filled with emotions. Every moment we spent here is priceless and will always hold a special place in our hearts</div>
                 </div>
@@ -435,7 +462,10 @@
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
     </div>
-    
+    <button id="music-btn" class="music-btn">
+        <span id="icon" class="play-icon">🎵</span>
+    </button>
+    <audio id="music-player" src="./Images/Memory-song.mp3" autoplay></audio>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script>
         const swiper = new Swiper('.swiper', {
@@ -455,6 +485,21 @@
             image.addEventListener('mouseenter', swiper.autoplay.stop.bind(swiper.autoplay));
             image.addEventListener('mouseleave', swiper.autoplay.start.bind(swiper.autoplay));
         });
+
+        const musicPlayer = document.getElementById('music-player');
+        const musicButton = document.getElementById('music-btn');
+        const icon = document.getElementById('icon');
+
+        musicButton.addEventListener('click', () => {
+            if (musicPlayer.paused) {
+                musicPlayer.play();
+                icon.textContent = '⏸';
+            } else {
+                musicPlayer.pause();
+                icon.textContent = '🎵';
+            }
+        });
+
     </script>
 </body>
 </html>
