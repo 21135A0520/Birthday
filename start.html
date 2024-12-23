@@ -308,15 +308,18 @@
             </div>
         </div>
     </div>
+    <audio id="giftbox-sound" src="./Images/blast.mp3" loop></audio>
 
     <canvas></canvas>
 
     <script>
         const present = document.querySelector('.present');
+        const audio = document.getElementById('giftbox-sound');  
        /* present.onclick = () => present.classList.toggle('open');
         present.ondblclick=()=>window.location.href = 'index.html';*/
         present.onclick = () => {
                 present.classList.toggle('open');
+                audio.play();
                 setTimeout(() => {
                     window.location.href = 'index.html'; 
                 }, 2000); 
