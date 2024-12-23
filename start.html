@@ -35,7 +35,7 @@
           }
           
           .name {
-            font-size: 1em;
+            font-size: 20px;
             font-weight: 100;
             position: absolute;
             top: 50%;
@@ -293,7 +293,7 @@
 <body>
     <div class="present">
         <div class="name">
-            Happy Birthday Chandu ❤️
+            Surprise is waiting for u &#128525;
         </div>
 
         <div class="rotate-container">
@@ -313,7 +313,16 @@
 
     <script>
         const present = document.querySelector('.present');
-        present.onclick = () => present.classList.toggle('open');
+       /* present.onclick = () => present.classList.toggle('open');
+        present.ondblclick=()=>window.location.href = 'index.html';*/
+        present.onclick = () => {
+                present.classList.toggle('open');
+                setTimeout(() => {
+                    window.location.href = 'index.html'; 
+                }, 2000); 
+        };
+        
+        
 
         (function () {
             'use strict';
